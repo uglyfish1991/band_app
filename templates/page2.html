@@ -1,10 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>this is my second page of my app! I hope you are enjoying my wonderful app</p>
+<hr>
+<pre class="reduced centred">
+When the user visits www.thiswebsite.com/page2 it triggers the page2() function from views.py. 
+This are linked together with the decorator <span class="highlight">@app.route()</span>
 
-{#My ratings:#}
+@my_view.route("/page2")
+def page2(): 
+    return render_template("page2.html", bands= bands)
 
+This acts like calling the page2() function. 
+
+This page also has <span class="highlight">bands=bands</span> in the <span class="highlight">render_template()</span> function. This is so when render_template() renders page2.html, it knows what bands is - bands is a variable defined on views.py. 
+</pre>
+
+
+{% if bands %}
+<h2>Song Ratings</h2>
 {% for band in bands %}
 <div>{{ band.song }}, {{ band.album }}, {{ band.artist }}, {{ band.rating }}
     {% for i in range(band.rating) %}
@@ -12,4 +25,42 @@
     {% endfor %}
 </div>
 {% endfor %}
+{% else %}
+<p>No songs have been added - why not add one <a href="{{ url_for('my_view.page3')}}">here?</a></p>
+{% endif %}
+<hr>
+<pre class="reduced centred">
+Because we are using JinJa2, we can include some programming structures within our HTML code. The content above is rendered using an if statement, and potentially a for loop depending on the if statement. 
+
+JinJa2 uses blocks to do this, as it has no indentation. 
+
+<table class="centred">
+<th>Python</th>
+<th>JinJa2</th>
+<tr>
+<td>if bands:
+  print("Song Ratings")
+  for band in bands:
+    print(band.song, band.album, band.artist)
+    for i in range(band.rating):
+      print("*", end="")
+    
+else:
+  print("There are no bands to show")</td>
+
+    <td>&#123;% if bands %}
+Song Ratings
+&#123;% for band in bands %}
+&#123;&#123; band.song }}, &#123;&#123; band.album }}, &#123;&#123; band.artist }}, &#123;&#123; band.rating }}
+&#123;% for i in range(band.rating) %}
+(draw star)
+&#123;% endfor %}
+&#123;% endfor %}
+&#123;% else %}
+No songs have been added
+&#123;% endif %}</td>
+</tr>
+</table>
+</pre>
+
 {% endblock %}

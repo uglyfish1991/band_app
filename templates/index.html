@@ -1,6 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum earum, ducimus quam quis sapiente ullam commodi laudantium laborum expedita corporis nisi, recusandae officiis fuga modi! Incidunt tempora quia, id libero dolorem nulla recusandae iste! Repellendus ad saepe odio nihil fugiat maiores eum doloremque accusamus provident velit, amet blanditiis recusandae sint similique illo veritatis magni voluptas et rerum quae voluptatibus ipsam autem nemo. Ut itaque facilis dolorem ex quibusdam aut assumenda hic qui quam? Cum, cupiditate? Assumenda exercitationem quam id alias corporis dolores eveniet magni porro perferendis. Quasi itaque quis, consectetur ipsam magnam tempora, fugit maxime earum repellendus magni fuga ea autem impedit vitae nisi accusantium tenetur beatae laborum veniam sunt. Obcaecati minima cum natus accusamus illum a, dignissimos dicta. Neque odio repudiandae, mollitia reprehenderit earum eius minus consectetur ipsa libero cum non distinctio, atque similique nam enim impedit quod veritatis possimus, veniam ea dolores at autem. Odit eaque porro tempora ea doloribus odio reiciendis quo doloremque aut, omnis non tempore dolorem magni ab laborum molestias voluptas, sequi explicabo amet. Distinctio ipsam officia delectus pariatur consectetur, accusantium quas quasi! Adipisci, labore quidem quo cum similique provident blanditiis obcaecati quaerat expedita. Cupiditate reiciendis eaque soluta laboriosam illum ipsam, quisquam error consequatur consectetur.</p>
+    <h1>Welcome to this Flask App</h1>
+    <p>This App is used for educational purposes, and showcases:
+        <ol>
+            <li>A Flask app structure split into app and views</li>
+            <li>How to use Flask to show Python content</li>
+            <li>How to work with user inputs</li>
+            <li>How to use Flask to help filter results</li>
+        </ol>
+    There is information written on pages, and on comments within the code. 
+    Information on pages regarding the code will be written as such:
+    <hr>
+    <pre class="reduced centred">
+    A Flask app is built from the Flask class. It can be structured as:
+
+         - Main Folder
+            - static <i>(a folder for things like images and css files)</i>
+                - style.css 
+            - templates <i>(a folder for things like HTML files)</i>
+                - base.html 
+                - index.html 
+                - page2.html 
+            - app.py <i>(The main file for creating the app)</i>
+            - views.py <i>(The file that defines which url triggers which function)</i>
+    </pre>
+    The app also contains a <span class="highlight">requirements.txt</span> file. This is used for deployment services like Render, and outlines what needs to be installed for the app to work. These are called <span class="highlight">dependencies</span> because the app is dependent on them. The app also contains a <span class="highlight">.gitignore</span> file which lists files that are on my local version (my computer) that I don't want commited to Git or GitHub.
+    </p>
     
 {% endblock %}

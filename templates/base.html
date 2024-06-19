@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Flask App</title>
+    <title>Band Flask App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
+
 <body>
-    <h1>Welcome to My App</h1>
-    <nav>
+    <nav class="spaced-even-row">
         <a href="{{ url_for('my_view.index')}}">Home</a>
-        <a href="{{ url_for('my_view.page2')}}">Page 2</a>
-        <a href="{{ url_for('my_view.page3')}}">Learn my Name</a>
+        <p>|</p>
+        <a href="{{ url_for('my_view.page2')}}">Band Listing</a>
+        <p>|</p>
+        <a href="{{ url_for('my_view.page3')}}">Enter a Band</a>
     </nav>
 
-    {# Hello this is a sentence #}
+<main class="reduced centred">
     {% block content %}
-    
-    {% endblock %}
 
-<footer>
-    This Flask App is copyright to me 2024
-</footer>
+    {% endblock %}
+</main>
+    <footer class="light-text">
+        <p>Find this repo at: <a href="https://github.com/uglyfish1991/band_app" target="_blank">My GitHub Account</a>
+        </p>
+        <hr>
+        <p>This is a learning tool and should not be used for production. </p>
+    </footer>
 
 </body>
+
 </html>
